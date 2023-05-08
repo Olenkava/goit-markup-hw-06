@@ -106,6 +106,10 @@ body {
   color: var(--hover-color);
 }
 
+.header-link.active {
+  color: var(--hover-color);
+}
+
 .header-link.active::after {
   content: " ";
   display: block;
@@ -358,7 +362,7 @@ body {
 }
 
 .customers {
-  padding: 120px 156px;
+  padding: 120px 0;
 }
 
 .customers-title {
@@ -374,22 +378,32 @@ body {
   color: var(--brand-color);
 }
 
-.customers-logo-link {
+.customers-logo-item {
+  width: calc(100% / 6);
+  height: 88px;
   display: block;
-  padding: 15px 31px;
   box-sizing: border-box;
   border: 1px solid var(--light-slate-color);
   border-radius: 4px;
   transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.customers-logo-link {
+  display: block;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  line-height: 86px;
+}
+
 .customers-logo {
   fill: var(--light-slate-color);
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  vertical-align: middle;
 }
 
-.customers-logo-link:hover,
-.customers-logo-link:focus {
+.customers-logo-item:hover,
+.customers-logo-item:focus {
   border-color: var(--hover-color);
 }
 
@@ -406,7 +420,7 @@ body {
 }
 
 .customers-logos-list svg {
-  display: block;
+  /* display: block; */
 }
 
 /*Portfolio*/
@@ -525,13 +539,15 @@ body {
 .footer-container {
   display: flex;
   justify-content: start;
-  gap: 120px;
+  align-items: baseline;
 }
 .footer-logo {
   display: inline-block;
   margin-bottom: 16px;
 }
-
+.footer-motto-container {
+  margin-right: 120px;
+}
 .footer-motto {
   width: 264px;
   font-size: 16px;
@@ -541,7 +557,7 @@ body {
 }
 
 .footer {
-  padding: 100px 159px 100px 156px;
+  padding: 100px 0;
   background: var(--brand-color);
 }
 .soc-media-title {
@@ -584,11 +600,8 @@ body {
   background: var(--green-color);
 }
 
-.footer-subscribe-container {
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  gap: 24px;
+.footer-subscribe-form {
+  margin-left: auto;
 }
 
 .subscribe-title {
@@ -600,6 +613,11 @@ body {
   color: var(--white);
 }
 
+.footer-subscribe-container {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
 .subscribe-input {
   width: 264px;
   height: 40px;
@@ -618,7 +636,7 @@ body {
   justify-content: center;
   gap: 16px;
   padding: 8px 24px;
-  margin-top: 40px;
+  margin-left: 24px;
   box-sizing: border-box;
   border-radius: 4px;
   font-family: inherit;
@@ -655,10 +673,9 @@ body {
 .modal {
   position: absolute;
   width: 408px;
-  min-height: 576px;
   left: 50%;
   top: 50%;
-  padding: 24px;
+  padding: 72px 24px 24px;
   transform: scale(1) translate(-50%, -50%);
   background: #fcfcfc;
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12),
@@ -672,11 +689,10 @@ body {
 }
 
 .modal .close-button {
-  display: block;
-  margin-left: auto;
+  position: absolute;
+  top: 24px;
+  right: 24px;
   padding: 8px;
-  margin-bottom: 24px;
-  line-height: 8px;
   border-radius: 50%;
   background: var(--cornflower-color);
   border: 1px solid rgba(0, 0, 0, 0.1);
